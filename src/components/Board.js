@@ -23,12 +23,13 @@ class Board extends Component {
             />
         )
     }
-    assignSquare(squareValue, squareID) {
+    assignSquare(squareValue, squareID, idSquare) {
         return (
             <Square
                 id={squareID}
                 value={squareValue}
                 checkBox={(id) => this.props.onClick(id)}
+                idSquare = {idSquare}
             />)
     }
     render() {
@@ -36,19 +37,19 @@ class Board extends Component {
             <div>
                 <div className="game">
                     <div className="row">
-                        {this.assignSquare(this.props.array[0], 0)}
-                        {this.assignSquare(this.props.array[1], 1)}
-                        {this.assignSquare(this.props.array[2], 2)}
+                        {this.assignSquare(this.props.array[0], 0,"topLeft")}
+                        {this.assignSquare(this.props.array[1], 1, "topMiddle")}
+                        {this.assignSquare(this.props.array[2], 2, "topRight")}
                     </div>
                     <div className="row">
-                        {this.assignSquare(this.props.array[3], 3)}
-                        {this.assignSquare(this.props.array[4], 4)}
-                        {this.assignSquare(this.props.array[5], 5)}
+                        {this.assignSquare(this.props.array[3], 3, "middleLeft")}
+                        {this.assignSquare(this.props.array[4], 4, "middleMiddle")}
+                        {this.assignSquare(this.props.array[5], 5, "middleRight")}
                     </div>
                     <div className="row">
-                        {this.assignSquare(this.props.array[6], 6)}
-                        {this.assignSquare(this.props.array[7], 7)}
-                        {this.assignSquare(this.props.array[8], 8)}
+                        {this.assignSquare(this.props.array[6], 6, "bottomLeft")}
+                        {this.assignSquare(this.props.array[7], 7, "bottomMiddle")}
+                        {this.assignSquare(this.props.array[8], 8, "bottomRight")}
                     </div>
                 </div>
                 <div className="gameOptions">

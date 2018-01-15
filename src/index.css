@@ -1,36 +1,24 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-size:32px;
   margin: 20px;
 }
 
-.square {
-  background: cyan;
-  /*border: 1px solid #999;*/
-  font-size: 80px;
-  font-weight: bold;
-  /*line-height: 34px;*/
-  height: 200px;
-  /*padding: 0;*/
-  /*text-align: center;*/
-  width: 200px;
-  float:left;
-  font-family: 'Raleway', sans-serif;
-}
+
 
 .heading{
   height:30px;
-  font-size:28px;
+  font-size:36px;
   text-align:center;
   padding:0px;
   margin:0px;
-  color:grey;  
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .signature{
-  height:20px;
+  height:16px;
   text-align:center;
-  font-family: 'Raleway', sans-serif;
+  font-size:16px;
 }
 
 .game {
@@ -49,28 +37,85 @@ body {
   margin-left:-300px;
   height:100px;
   border: 2px solid #999;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Playfair Display', serif;
 }
+
+/* Square Styles */
+.square {
+  background: white;
+  border: 0px solid rgb(27, 27, 27);
+  font-size: 80px;
+  font-weight: bold;
+  /*line-height: 34px;*/
+  height: 200px;
+  /*padding: 0;*/
+  /*text-align: center;*/
+  width: 200px;
+  float:left;
+  font-family: 'Playfair Display', serif;
+}
+
+#topLeft{
+  border-width: 0px 2px 2px 0px;
+}
+
+#topMiddle{
+  border-width: 0px 2px 2px 2px;
+}
+
+#topRight{
+  border-width: 0px 0px 2px 2px;
+}
+
+#middleLeft{
+  border-width: 2px 2px 2px 0px;
+}
+
+#middleMiddle{
+  border-width: 2px 2px 2px 2px;
+}
+
+#middleRight{
+  border-width: 2px 0px 2px 2px;
+}
+
+#bottomLeft{
+  border-width: 2px 2px 0px 0px;
+}
+
+#bottomMiddle{
+  border-width: 2px 2px 0px 2px;
+}
+
+#bottomRight{
+  border-width: 2px 0px 0px 2px;
+}
+
 
 .leftButton{
   position:fixed;
   top:800px;
   left:50%;
-  margin-left:-300px;
-  width:300px;
-  height:150px;
-  font-family: 'Raleway', sans-serif;
+  width:290px;
+  height:130px;
   font-size:30px;
+  font-family: 'Playfair Display', serif;
+  margin:10px 10px 0px -300px;
+  background-color:white;
+  border:solid 1px grey;
 }
 
 .rightButton{
   position:fixed;
   top:800px;
   left:50%;
-  width:300px;
-  height:150px;
-  font-family: 'Raleway', sans-serif;
+  width:290px;
+  height:130px;
   font-size:30px;
+  font-family: 'Playfair Display', serif;
+  margin:10px 0px 0px 10px;
+  background-color:white;
+  border:solid 1px grey;
 }
 
 

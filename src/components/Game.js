@@ -37,7 +37,7 @@ class Game extends Component {
       if (name === 'X') chosenPlayer = 0;
       else chosenPlayer = 1;
       this.setState({
-        screenText: this.state.screenText + lineBreak + "R: Awesome! You have chosen " + name + "!",
+        screenText: "R: Awesome! You have chosen " + name + "!" + lineBreak + lineBreak + this.state.screenText ,
       })
       ChoosePlayerLock = true;
       setTimeout(() => {
@@ -49,7 +49,7 @@ class Game extends Component {
         }
 
         this.setState({
-          screenText: this.state.screenText + lineBreak + lineBreak + "R: Great, please play " + playerTurn,
+          screenText: "R: Great, please play " + playerTurn + lineBreak + lineBreak + this.state.screenText,
           leftButton: 'I give up, restart Game',
           rightButton: 'Goodbye, I will always remember you.',
         })
@@ -58,24 +58,24 @@ class Game extends Component {
     switch (name) {
       case 'I give up, restart Game':
         this.setState({
-          screenText: this.state.screenText + lineBreak + "Human: I give up, restart Game" + lineBreak + "R: Ha! Wimp!",
+          screenText:  "Human: I give up, restart Game" + lineBreak + "R: Ha! Wimp!" + lineBreak+ lineBreak+ this.state.screenText,
         })
         setTimeout(()=>this.restartGame(),1500);
         break;
       case 'Goodbye, I will always remember you.':
         this.setState({
-          screenText: this.state.screenText + lineBreak +"Human: Goodbye, I will always remember you." + lineBreak+ "R: Goodbye sweet friend!",
+          screenText: "Human: Goodbye, I will always remember you." + lineBreak+ "R: Goodbye sweet friend!"  + lineBreak + lineBreak+ this.state.screenText,
         })
         break;
       case 'Yes':
         this.setState({
-          screenText: this.state.screenText + lineBreak + "Human:Yes" + lineBreak + "R: Excellent! We're gonna be the best of buddies!",
+          screenText: "Human:Yes" + lineBreak + "R: Excellent! We're gonna be the best of buddies!" + lineBreak+ lineBreak +this.state.screenText,
         })
         setTimeout(()=>this.restartGame(),1500);
         break;
       case 'No':
         this.setState({
-          screenText: this.state.screenText + lineBreak + "Human: No" + lineBreak + "R: alrightio then, it was fun all the same. Goodbye sweet friend!",
+          screenText: "Human: No" + lineBreak + "R: alrightio then, it was fun all the same. Goodbye sweet friend!"+ lineBreak+ lineBreak+ this.state.screenText,
         })
         break;
       default:
@@ -120,7 +120,7 @@ class Game extends Component {
       if (array[id] !== "") return; // if square already clicked, skip
       this.setSquareState(id);
       this.setState({
-        screenText: this.state.screenText + lineBreak + "R: hmmmm...lemme think..."
+        screenText: "R: hmmmm...lemme think..." +lineBreak +lineBreak + this.state.screenText
       })
       if (this.checkWinning() === true) return;
       setTimeout(() => this.playRobot(), 1000);
@@ -152,9 +152,9 @@ class Game extends Component {
   /******************************************************************** Robot Strategies ******************************************************/
   robotPlayBlockOrWin(combinationIndex, sumPlay) {
     // happy
-    if (sumPlay > 0 && chosenPlayer === 0) this.setState({ screenText: this.state.screenText + lineBreak + "R:Ha! Good move! But I've got you now!" });
+    if (sumPlay > 0 && chosenPlayer === 0) this.setState({ screenText: "R:Ha! Good move! But I've got you now!"+ lineBreak+ lineBreak+this.state.screenText });
     // sarcastic
-    if (sumPlay < 0 && chosenPlayer === 1) this.setState({ screenText: this.state.screenText + lineBreak + "R:Cool story, bruh, that's you, cause you're history!" });
+    if (sumPlay < 0 && chosenPlayer === 1) this.setState({ screenText: "R:Cool story, bruh, that's you, cause you're history!" + lineBreak+ lineBreak+this.state.screenText });
     // loop to find missing value in row, column,or diagonal and make robot move
     for (var ii = 0; ii < possiblePlays[combinationIndex].length; ii++) {
       if (scoreArray[possiblePlays[combinationIndex][ii]] === 0) {
@@ -177,15 +177,15 @@ class Game extends Component {
   endGame(sumPlay) {
     // block play
     if (chosenPlayer === 0) {
-      if (sumPlay > 0) this.setState({ screenText: this.state.screenText + lineBreak + "R: You Won! :D" });
-      if (sumPlay < 0) this.setState({ screenText: this.state.screenText + lineBreak + "R: Sorry, you lost this round. Hey, better luck next time. :/" });
+      if (sumPlay > 0) this.setState({ screenText: "R: You Won! :D"  + lineBreak + lineBreak+this.state.screenText});
+      if (sumPlay < 0) this.setState({ screenText: "R: Sorry, you lost this round. Hey, better luck next time. :/"+ lineBreak+ lineBreak+this.state.screenText });
     }
     if (chosenPlayer === 1) {
-      if (sumPlay > 0) this.setState({ screenText: this.state.screenText + lineBreak + "R: I won! I am the winner! I am the greatest champion of all time! :P" });
-      if (sumPlay < 0) this.setState({ screenText: this.state.screenText + lineBreak + "R: Dang it! I lost, I want a rematch, something fishy is going on >:(" });
+      if (sumPlay > 0) this.setState({ screenText: "R: I won! I am the winner! I am the greatest champion of all time! :P"+ lineBreak+ lineBreak+this.state.screenText });
+      if (sumPlay < 0) this.setState({ screenText: "R: Dang it! I lost, I want a rematch, something fishy is going on >:("+ lineBreak+ lineBreak+this.state.screenText });
     }
     if (sumPlay === 0) {
-      this.setState({ screenText: this.state.screenText + lineBreak + "R: Draw, shame, we should have become artists. :S" });
+      this.setState({ screenText: "R: Draw, shame, we should have become artists. :S"+ lineBreak+ lineBreak+this.state.screenText });
     }
     setTimeout(() => this.playNewGame(), 1000);
     return true;
@@ -193,7 +193,7 @@ class Game extends Component {
 
   playNewGame() {
     this.setState({
-      screenText: this.state.screenText + lineBreak + "R: Hey, want to play another game?",
+      screenText: "R: Hey, want to play another game?"+ lineBreak+ lineBreak+this.state.screenText,
       leftButton: 'Yes',
       rightButton: 'No',
     })
@@ -214,7 +214,7 @@ class Game extends Component {
   render() {
     return (
       <div>
-        <h1 className="heading">Tic Tac Toe with The Robot</h1>
+        <p className="heading">Tic Tac Toe with The Robot</p>
         <p className="signature"> created by Jacky Lui 2017</p>
         <Board
           array={this.state.boardArray}
