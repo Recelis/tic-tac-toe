@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Board from './Board';
 import '../index.css';
+import github from "./img/github.png";
 
 var array = ["", "", "", "", "", "", "", "", ""];
 var scoreArray = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -210,11 +211,16 @@ class Game extends Component {
       boardArray: array,
     })
   }
+  openWindow(){
+    window.open("https://github.com/Recelis/tic-tac-toe",'_blank');
+  }
 
   render() {
     return (
       <div>
-        <p className="heading">Tic Tac Toe with The Robot</p>
+        <p className="heading">Tic Tac Toe with The Robot
+          <span><button onClick = {()=>this.openWindow()}className = "github"><img className = "github" src = {github}></img></button></span>
+        </p>
         <p className="signature"> created by Jacky Lui 2017</p>
         <Board
           array={this.state.boardArray}

@@ -1,9 +1,17 @@
 body {
   font-family: 'Playfair Display', serif;
   font-size:32px;
-  margin: 20px;
+  margin: 10px;
 }
 
+.outerBorder{
+  border:solid 4px black;
+  width:750px;
+  height:940px;
+  left:50%;
+  position:fixed;
+  margin:0px 0px 25px -375px;
+}
 
 
 .heading{
@@ -24,13 +32,13 @@ body {
 .game {
   position:fixed;
   left:50%;
+  margin-left:-300px;
   height:600px;
   width:600px;
-  margin-left:-300px;
 }
 
 .chatScreen{
-  margin-top:600px;
+  margin-top:610px;
   position:fixed;
   left:50%;
   width:600px;
@@ -46,10 +54,7 @@ body {
   border: 0px solid rgb(27, 27, 27);
   font-size: 80px;
   font-weight: bold;
-  /*line-height: 34px;*/
   height: 200px;
-  /*padding: 0;*/
-  /*text-align: center;*/
   width: 200px;
   float:left;
   font-family: 'Playfair Display', serif;
@@ -118,4 +123,9 @@ body {
   border:solid 1px grey;
 }
 
-
+.github{
+  width:50px;
+  height:50px;
+  border:solid 0px transparent;
+  background-color:transparent;
+}
