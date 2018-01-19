@@ -54,8 +54,10 @@ class Board extends Component {
                 </div>
                 <div className="gameOptions">
                     {this.chatScreen()}
-                    {this.chatButtons(this.props.leftButton, 'leftButton')}
-                    {this.chatButtons(this.props.rightButton, 'rightButton')}
+                    <div className = "leftRightButtons">
+                        {this.chatButtons(this.props.leftButton, 'leftButton')}
+                        {this.chatButtons(this.props.rightButton, 'rightButton')}
+                    </div>
                 </div>
             </div>
         )
