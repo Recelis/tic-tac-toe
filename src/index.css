@@ -101,7 +101,7 @@ body {
 }
 
 .leftButton{
-  top:800px;
+  display:inline;
   width:290px;
   height:130px;
   font-size:30px;
@@ -112,7 +112,7 @@ body {
 }
 
 .rightButton{
-  top:800px;
+  display:inline;
   width:290px;
   height:130px;
   font-size:30px;
